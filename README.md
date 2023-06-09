@@ -28,8 +28,10 @@ npm add hono-nunjucks
 npx hono-nunjucks-precompile src/templates src/precompiled.mjs
 ```
 
-If you're using Wrangler, you can add a custom build step to watch the "src/template" directory 
-and automatically precompile & restart on any changes.
+If you're using Wrangler, you can add a custom build step to watch the "src/
+template" directory  and automatically precompile & restart on any changes. Do
+not put the precompiled result to the template's directory to avoid a reload
+cycle.
 
 ```toml
 [build]
@@ -57,12 +59,18 @@ and also that the precompiled templates are included in the resulting bundle
 (again assuming Cloudflare Workers).
 
 4. Use the template in your code. Note that the extension is automatically
-stripped from the name (you reference "hello.html" as "hello" in the render method).
+stripped from the name.
 
 ```typescript
 async function home(c: Context) {
+  // t is automatically added by the middleware
   const t = c.get("t");
-  return c.html(t.render("hello", { username: "rumburak" }));
+
+  // Render the template to string (hello.html -> hello)
+  const rendered = t.render("hello", { username: "rumburak" });
+
+  // Send it as HTML
+  return c.html(rendered);
 }
 ```
 
