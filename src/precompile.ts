@@ -14,7 +14,6 @@ if (args.length != 2) {
 }
 
 function wrapper(templates: any[]) {
-  console.log(templates);
   let out = `const templates = {};\n\n`;
 
   for (const template of templates) {
