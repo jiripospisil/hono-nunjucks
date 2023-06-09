@@ -1,8 +1,8 @@
 # Nunjucks for Hono
 
 Adds support for the [Nunjucks](https://mozilla.github.io/nunjucks/) templating 
-engine to Hono. Traditional templating engines do not work on serverless
-runtimes such as Cloudflare Workers because they rely on file system APIs and
+engine to [Hono](https://hono.dev/). Traditional templating engines do not work on 
+serverless runtimes such as Cloudflare Workers because they rely on file system APIs and
 dynamic code evaluation.
 
 Nunjacks is a templating engine with a neat feature which allows it to
