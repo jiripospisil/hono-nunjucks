@@ -1,0 +1,43 @@
+{
+  "name": "hono-nunjucks",
+  "version": "0.0.1",
+  "description": "Adds support for the Nunjucks templating engine to Hono",
+  "main": "dist/index.js",
+  "bin": {
+    "hono-nunjucks-precompile": "dist/precompile.js"
+  },
+  "scripts": {
+    "watch": "tsc --watch",
+    "build": "tsc --build",
+    "prepare": "tsc --build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/jiripospisil/hono-nunjucks.git"
+  },
+  "keywords": [
+    "hono",
+    "nunjucks",
+    "templates",
+    "cloudflare-workers"
+  ],
+  "author": "Jiri Pospisil <jiri@jpospisil.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jiripospisil/hono-nunjucks/issues"
+  },
+  "homepage": "https://github.com/jiripospisil/hono-nunjucks#readme",
+  "devDependencies": {
+    "@types/node": "^20.2.5",
+    "@types/nunjucks": "^3.2.2",
+    "typescript": "^5.1.3"
+  },
+  "dependencies": {
+    "hono": "^3.2.5",
+    "nunjucks": "^3.2.4"
+  },
+  "files": [
+    "dist/",
+    "src/"
+  ]
+}
